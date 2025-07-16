@@ -83,20 +83,31 @@ Assign the result to a variable named swappedString.
 
 */
 
-//Starter Code
-// Task 1
+// Task 1: Extract Code Points from Characters
 let inputString1 = "Code";
-let firstCodePoint; // Your code here
-let thirdCodePoint; // Your code here
+let firstCodePoint = inputString1.charCodeAt(0);
+let thirdCodePoint = inputString1.charCodeAt(2);
 
-// Task 2
-let wordFromCodePoints; // Your code here
+// Task 2: Create a Word from Code Points
 
-// Task 3
+let wordFromCodePoints = String.fromCharCode(72, 101, 108, 108);
+
+// Task 3: Swap First and Last Characters
 let inputString2 = "Launch";
-let swappedString; // Your code here
 
-// Log all results
+// Get the code points of the first and last characters
+let firstChar = inputString2.charCodeAt(0);
+let lastChar = inputString2.charCodeAt(inputString2.length - 1);
+
+// Get the middle part of the string
+let middlePart = inputString2.substring(1, inputString2.length - 1);
+// We can also use slice method to chop and get a part of the string
+let slicedString = inputString2.slice(1, inputString2.length - 1)
+
+// Convert the code points back to characters and construct the new string
+swappedString = String.fromCharCode(lastChar) + middlePart + String.fromCharCode(firstChar);
+
+// Log all results to the console
 console.log({
   firstCodePoint,
   thirdCodePoint,
